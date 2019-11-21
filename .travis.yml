@@ -23,6 +23,7 @@ after_success:
   - docker push aleksaspielikis/multi-worker
 
 deploy:
+  edge: true
   provider: elasticbeanstalk
   region: eu-central-1
   app: multi-docker2
