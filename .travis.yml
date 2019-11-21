@@ -4,23 +4,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t aleksas/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t aleksaspielikis/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true aleksas/react-test npm test
+  - docker run -e CI=true aleksaspielikis/react-test npm test
 
 after_success:
-  - docker build -t aleksas/multi-client ./client
-  - docker build -t aleksas/multi-nginx ./nginx
-  - docker build -t aleksas/multi-server ./server
-  - docker build -t aleksas/multi-worker ./worker
+  - docker build -t aleksaspielikis/multi-client ./client
+  - docker build -t aleksaspielikis/multi-nginx ./nginx
+  - docker build -t aleksaspielikis/multi-server ./server
+  - docker build -t aleksaspielikis/multi-worker ./worker
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub  
-  - docker push -t aleksas/multi-client
-  - docker push -t aleksas/multi-nginx
-  - docker push -t aleksas/multi-server
-  - docker push -t aleksas/multi-worker
+  - docker push -t aleksaspielikis/multi-client
+  - docker push -t aleksaspielikis/multi-nginx
+  - docker push -t aleksaspielikis/multi-server
+  - docker push -t aleksaspielikis/multi-worker
 
 deploy:
   provider: elasticbeanstalk
