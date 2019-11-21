@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/aleksas/nginx-redis-react-pg.svg?branch=master)](https://travis-ci.org/aleksas/nginx-redis-react-pg)
+
 # nginx-redis-react-pg
 
 ## Shemas 
