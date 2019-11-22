@@ -22,15 +22,15 @@ after_success:
   - docker push aleksaspielikis/multi-server
   - docker push aleksaspielikis/multi-worker
 
-deploy:
-  edge: true
-  provider: elasticbeanstalk
-  region: eu-central-1
-  app: multi-docker2
-  env: MultiDocker2-env
-  bucket_name: elasticbeanstalk-eu-central-1-883492279882
-  bucket_path: multi-docker2
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+#deploy:
+#  edge: true
+#  provider: elasticbeanstalk
+#  region: eu-central-1
+#  app: multi-docker2
+#  env: MultiDocker2-env
+#  bucket_name: elasticbeanstalk-eu-central-1-883492279882
+#  bucket_path: multi-docker2
+#  on:
+#    branch: master
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY
